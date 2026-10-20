@@ -28,6 +28,7 @@ import {
   type HeaderNavModule,
 } from '@/lib/nav-modules'
 import {
+  mapStatusDataToConfig,
   STATUS_QUERY_KEY,
   ensureStatus,
   statusQueryOptions,
@@ -87,6 +88,20 @@ afterEach(() => {
   apiClient.get = originalGet
   window.localStorage.clear()
   useSystemConfigStore.setState(useSystemConfigStore.getInitialState(), true)
+})
+
+describe('default system branding', () => {
+  test('uses the default name when status omits it and preserves a configured name', () => {
+    expect(mapStatusDataToConfig({}).systemName).toBe('云鹤智元')
+    expect(mapStatusDataToConfig({}).logo).toBe('/logo.png')
+
+    const configured = mapStatusDataToConfig({
+      system_name: '自定义名称',
+      logo: 'https://example.com/custom-logo.png',
+    })
+    expect(configured.systemName).toBe('自定义名称')
+    expect(configured.logo).toBe('https://example.com/custom-logo.png')
+  })
 })
 
 describe('shared status query deduplication', () => {

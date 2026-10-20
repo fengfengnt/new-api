@@ -16,7 +16,6 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 For commercial licensing, please contact support@quantumnous.com
 */
-import { Link } from '@tanstack/react-router'
 import { useTranslation } from 'react-i18next'
 
 import {
@@ -42,7 +41,7 @@ type SystemBrandProps = {
 /**
  * System brand component
  * Displays current system logo + name.
- * - inline: compact pill in the top app bar; clicking navigates to home (/)
+ * - inline: compact pill in the top app bar
  * - sidebar: stacked card in the sidebar header (display only)
  */
 export function SystemBrand(props: SystemBrandProps) {
@@ -51,18 +50,14 @@ export function SystemBrand(props: SystemBrandProps) {
   const { logo } = useSystemConfig()
 
   const variant = props.variant ?? 'sidebar'
-  const name = status?.system_name || props.defaultName || 'New API'
-  const version =
-    status?.version || props.defaultVersion || t('Unknown version')
+  const name = status?.system_name || props.defaultName || '云鹤智元'
+  const version = status?.version || props.defaultVersion || '0.1.0'
 
   if (variant === 'inline') {
     return (
-      <Link
-        to='/'
-        aria-label={t('Go to home')}
+      <div
         className={cn(
-          'text-foreground inline-flex h-7 min-w-0 items-center gap-1.5 rounded-md px-1.5 text-sm font-medium transition-colors outline-none select-none',
-          'hover:bg-accent focus-visible:ring-ring/40 focus-visible:ring-2'
+          'text-foreground inline-flex h-7 min-w-0 items-center gap-1.5 rounded-md px-1.5 text-sm font-medium select-none'
         )}
       >
         <div className='flex size-5 shrink-0 items-center justify-center overflow-hidden rounded-md'>
@@ -73,7 +68,10 @@ export function SystemBrand(props: SystemBrandProps) {
           />
         </div>
         <span className='max-w-[12rem] truncate'>{name}</span>
-      </Link>
+        <span className='text-muted-foreground hidden max-w-32 truncate font-mono text-xs @min-[22rem]/system-brand:inline'>
+          {version}
+        </span>
+      </div>
     )
   }
 

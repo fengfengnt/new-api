@@ -37,28 +37,20 @@ import type { TopNavLink } from '../types'
  * Brand logo component with skeleton loading
  */
 interface BrandLogoProps {
-  homeUrl: string
   displayLogo: React.ReactNode
   displaySiteName: string
   loading: boolean
   logoLoaded: boolean
-  onClick?: () => void
 }
 
 function BrandLogo({
-  homeUrl,
   displayLogo,
   displaySiteName,
   loading,
   logoLoaded,
-  onClick,
 }: BrandLogoProps) {
   return (
-    <Link
-      to={homeUrl}
-      className='flex items-center gap-2 text-xl font-bold'
-      onClick={onClick}
-    >
+    <div className='flex items-center gap-2 text-xl font-bold'>
       <div className='relative h-6 w-6'>
         {loading || !logoLoaded ? (
           <Skeleton className='absolute inset-0 rounded-full' />
@@ -66,7 +58,7 @@ function BrandLogo({
         {displayLogo}
       </div>
       {loading ? <Skeleton className='h-5 w-20' /> : displaySiteName}
-    </Link>
+    </div>
   )
 }
 
@@ -187,7 +179,6 @@ function MobileSignInButton({ onNavigate }: MobileSignInButtonProps) {
 export interface MobileDrawerProps {
   isOpen: boolean
   onClose: () => void
-  homeUrl: string
   displayLogo: React.ReactNode
   displaySiteName: string
   loading: boolean
@@ -204,7 +195,6 @@ export interface MobileDrawerProps {
 export function MobileDrawer({
   isOpen,
   onClose,
-  homeUrl,
   displayLogo,
   displaySiteName,
   loading,
@@ -243,12 +233,10 @@ export function MobileDrawer({
               {/* Header with logo and close button */}
               <div className='flex items-center justify-between'>
                 <BrandLogo
-                  homeUrl={homeUrl}
                   displayLogo={displayLogo}
                   displaySiteName={displaySiteName}
                   loading={loading}
                   logoLoaded={logoLoaded}
-                  onClick={onClose}
                 />
                 <Button
                   variant='ghost'

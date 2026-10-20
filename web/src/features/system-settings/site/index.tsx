@@ -26,7 +26,7 @@ import {
 
 const defaultSiteSettings: SiteSettings = {
   Notice: '',
-  SystemName: 'New API',
+  SystemName: '云鹤智元',
   Logo: '',
   Footer: '',
   About: '',
