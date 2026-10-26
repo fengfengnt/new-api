@@ -2,7 +2,8 @@ FROM oven/bun:1.4.0@sha256:5ff609364c049b54eb0ff560ec96319729a972078ef2c755d758f
 
 WORKDIR /build/web
 COPY web/package.json web/bun.lock ./
-RUN bun install --frozen-lockfile
+ARG BUN_REGISTRY=https://registry.npmjs.org
+RUN bun install --frozen-lockfile --network-concurrency 8 --registry "$BUN_REGISTRY"
 COPY ./web ./
 COPY ./VERSION /build/VERSION
 RUN DISABLE_ESLINT_PLUGIN='true' VITE_REACT_APP_VERSION=$(cat /build/VERSION) bun run build
@@ -14,6 +15,7 @@ ARG TARGETOS
 ARG TARGETARCH
 ENV GOOS=${TARGETOS:-linux} GOARCH=${TARGETARCH:-amd64}
 ENV GOEXPERIMENT=greenteagc
+ARG GOPROXY=https://proxy.golang.org,direct
 
 WORKDIR /build
 

@@ -1,0 +1,1225 @@
+/*
+Copyright (C) 2023-2026 QuantumNous
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+For commercial licensing, please contact support@quantumnous.com
+*/
+.yunhe-homepage {
+  --api-blue: #1354ee;
+  --api-text: #101828;
+  --api-muted: #64748b;
+  --api-bg: #fff;
+  --api-soft: #f8fafc;
+  color: var(--api-text);
+  background: var(--api-bg);
+  font-family: 'Noto Sans SC', 'Noto Sans SC Placeholder', sans-serif;
+  font-feature-settings: 'blwf', 'cv03', 'cv04', 'cv09', 'cv11';
+}
+.yunhe-homepage:not([data-language^='zh']) {
+  font-family: 'Söhne Buch', 'Söhne Buch Placeholder', sans-serif;
+}
+.yunhe-homepage:not([data-language^='zh']) .hero h1 {
+  font-size: 48px;
+  line-height: 1.05;
+  letter-spacing: -1.2px;
+  max-width: 700px;
+}
+.yunhe-homepage:not([data-language^='zh']) .hero-headline,
+.yunhe-homepage:not([data-language^='zh']) .hero-promise > span:first-child {
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+.dark .yunhe-homepage {
+  --api-text: #fff;
+  --api-muted: #94a3b8;
+  --api-bg: #0f172a;
+  --api-soft: #0f172a;
+}
+.yunhe-homepage *,
+.yunhe-homepage *::before,
+.yunhe-homepage *::after {
+  box-sizing: border-box;
+}
+.yunhe-homepage h1,
+.yunhe-homepage h2,
+.yunhe-homepage h3,
+.yunhe-homepage h4,
+.yunhe-homepage p {
+  margin: 0;
+}
+.yunhe-homepage a {
+  text-decoration: none;
+}
+.yunhe-homepage .page-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 32px;
+}
+.dark .yunhe-homepage .dark-icon {
+  display: block;
+}
+.dark .yunhe-homepage .light-icon {
+  display: none;
+}
+.yunhe-homepage .hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 128px 0 96px;
+  overflow: clip;
+  background: #f8fafc url('../../public/homepage/images/banner-bg.webp')
+    center/cover no-repeat;
+}
+.yunhe-homepage .hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 32px;
+  position: relative;
+}
+.yunhe-homepage .hero-copy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 672px;
+}
+.yunhe-homepage .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 28.8px;
+  height: 36px;
+  border-radius: 100px;
+  background: linear-gradient(269.76deg, #03d5ef4d -58.75%, #5746e94d 140.92%);
+  color: #1354ee;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.35px;
+  margin-bottom: 64px;
+}
+.yunhe-homepage .hero h1 {
+  font-size: 76px;
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin-bottom: 24px;
+}
+.yunhe-homepage .hero-headline {
+  display: block;
+  white-space: nowrap;
+}
+.yunhe-homepage .hero-promise {
+  display: block;
+  margin-top: 8px;
+}
+.yunhe-homepage .hero-promise > span:first-child {
+  color: #1354ee;
+  white-space: nowrap;
+}
+.yunhe-homepage .ready-text {
+  display: block;
+  margin-top: 8px;
+}
+.yunhe-homepage .hero-stats {
+  display: flex;
+  gap: 64px;
+  margin-top: 8px;
+}
+.yunhe-homepage .hero-stats > div {
+  text-align: center;
+}
+.yunhe-homepage .hero-stats strong {
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: -0.9px;
+  line-height: 1.1;
+}
+.yunhe-homepage .hero-stats p {
+  margin-top: 16px;
+  font-size: 14px;
+}
+.yunhe-homepage .hero-action {
+  margin-top: 140px;
+  width: 272px;
+}
+.yunhe-homepage .action-link {
+  width: 100%;
+  height: 48px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  background: #1354ee;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 2px;
+  border: 0;
+  box-shadow:
+    0 10px 15px -3px #1e3a8a33,
+    0 4px 6px -4px #1e3a8a33;
+  transition:
+    background 0.3s,
+    transform 0.3s;
+  overflow: hidden;
+}
+.yunhe-homepage .action-link:hover {
+  background: #0f42c0;
+  transform: translateY(-2px);
+}
+.yunhe-homepage .action-text {
+  position: relative;
+  height: 1.5em;
+  overflow: hidden;
+}
+.yunhe-homepage .action-text > span {
+  display: block;
+  transition: transform 0.3s;
+}
+.yunhe-homepage .action-text > span + span {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  white-space: nowrap;
+}
+.yunhe-homepage .action-link:hover .action-text > span {
+  transform: translateY(-100%);
+}
+.yunhe-homepage .action-link svg {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+.yunhe-homepage .action-link:hover svg {
+  transform: translateX(4px);
+}
+.yunhe-homepage .hero-visual {
+  position: relative;
+  height: 500px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.yunhe-homepage .scene-frame {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1;
+  transform: translateX(96px) scale(1.25);
+}
+.yunhe-homepage .scene-glow {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background: #3b82f633;
+  filter: blur(80px);
+}
+.yunhe-homepage .scene-crop {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  filter: drop-shadow(0 25px 25px #00000026);
+}
+.yunhe-homepage .scene-canvas {
+  position: absolute;
+  width: 250%;
+  height: 250%;
+  left: -75%;
+  top: -75%;
+  transform: scale(0.8);
+  pointer-events: none;
+}
+.yunhe-homepage .scene-canvas canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  visibility: hidden;
+}
+.yunhe-homepage .scene-frame[data-ready='true'] canvas {
+  visibility: visible;
+}
+.yunhe-homepage .scene-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.yunhe-homepage .scene-error {
+  position: absolute;
+  inset: 45% 0 auto;
+  text-align: center;
+  color: var(--api-muted);
+}
+.yunhe-homepage .section-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 20px 0;
+  border-block: 1px solid #ebf0f7;
+  margin-bottom: 48px;
+}
+.yunhe-homepage .section-label > span {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #1354ee;
+  flex-shrink: 0;
+}
+.yunhe-homepage .section-heading h2 {
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1.625;
+  letter-spacing: -1.4px;
+  margin-bottom: 40px;
+}
+.yunhe-homepage .section-heading em {
+  color: #1354ee;
+  font-style: normal;
+}
+.yunhe-homepage .models-section {
+  background: var(--api-bg);
+  padding-bottom: 64px;
+}
+.yunhe-homepage .models-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 64px;
+  align-items: start;
+}
+.yunhe-homepage .model-tabs {
+  grid-column: span 5;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.yunhe-homepage .model-tab {
+  display: block;
+  width: 100%;
+  height: auto;
+  white-space: normal;
+  text-align: left;
+  padding: 24px;
+  border-radius: 0;
+  font-family: inherit;
+}
+.yunhe-homepage .model-tab:hover {
+  background: transparent;
+}
+.yunhe-homepage .model-tab-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 16px;
+  border-left: 2px solid transparent;
+}
+.yunhe-homepage .selected .model-tab-copy {
+  border-left-color: #1354ee;
+}
+.yunhe-homepage .model-tab-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+.yunhe-homepage .model-tab-label i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1354ee;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+.yunhe-homepage .selected .model-tab-label i {
+  opacity: 1;
+}
+.yunhe-homepage .model-description {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: #0006;
+}
+.yunhe-homepage .selected .model-description {
+  color: var(--api-text);
+}
+.yunhe-homepage .desktop-model-panel {
+  grid-column: span 7;
+  min-height: 400px;
+  height: 100%;
+}
+.yunhe-homepage .mobile-model-panel {
+  display: none;
+}
+.yunhe-homepage .model-panel {
+  padding: 48px;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fff 0%, #a5b4fc 50%, #3b82f6 100%);
+}
+.yunhe-homepage .model-panel-1 {
+  background: linear-gradient(
+    135deg,
+    #ffd080 0%,
+    #fca5a5 30%,
+    #e0f2fe 70%,
+    #3b82f6 100%
+  );
+}
+.yunhe-homepage .model-panel-2 {
+  background: linear-gradient(
+    135deg,
+    #fff 0%,
+    #e9d5ff 30%,
+    #a855f7 60%,
+    #7c3aed 100%
+  );
+}
+.yunhe-homepage .model-glass {
+  width: 100%;
+  padding: 40px;
+  border-radius: 32px;
+  border: 1px solid #ffffff66;
+  background: #ffffff4d;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px #0000000f;
+  outline: 1px solid #0000000d;
+}
+.yunhe-homepage .model-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+.yunhe-homepage .model-column {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.yunhe-homepage .model-brand {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 6px -1px #0000001a;
+}
+.yunhe-homepage .model-brand strong {
+  font-size: 14.4px;
+  line-height: 1.25;
+  text-align: center;
+  max-width: 90%;
+}
+.yunhe-homepage .model-brand > svg {
+  width: 48px;
+  height: 48px;
+  color: #1354ee;
+}
+.yunhe-homepage .model-versions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+.yunhe-homepage .model-versions > span {
+  background: #fff;
+  color: #1354ee;
+  padding: 12px 24px;
+  border-radius: 100px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  box-shadow: 0 1px 2px #0000000d;
+}
+.yunhe-homepage .features-section {
+  padding: 64px 0;
+  background: #f8fafc80;
+}
+.yunhe-homepage .feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+.yunhe-homepage .feature-card {
+  position: relative;
+  padding: 36px 32px;
+  background: var(--api-bg);
+  border: 1px solid #e6ecf6;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s;
+}
+.yunhe-homepage .feature-card:hover {
+  background: #1354ee;
+  border-color: #1354ee;
+  color: #fff;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px #0000001a;
+}
+.yunhe-homepage .feature-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+}
+.yunhe-homepage .feature-divider {
+  height: 1px;
+  background: #e6ecf6;
+  margin: 16px -32px;
+}
+.yunhe-homepage .feature-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.yunhe-homepage .feature-card li {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+}
+.yunhe-homepage .feature-card li svg {
+  width: 16px;
+  height: 16px;
+  color: #1354ee;
+}
+.yunhe-homepage .feature-copy {
+  display: grid;
+  min-height: 70px;
+  flex: 1;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.625;
+}
+.yunhe-homepage .feature-copy > p,
+.yunhe-homepage .feature-copy > ul {
+  grid-area: 1/1;
+  transition: opacity 0.3s;
+}
+.yunhe-homepage .feature-copy > ul {
+  opacity: 0;
+}
+.yunhe-homepage .feature-card:hover .feature-copy > ul {
+  opacity: 1;
+  color: #fff;
+}
+.yunhe-homepage .feature-card:hover .feature-copy > p {
+  opacity: 0;
+}
+.yunhe-homepage .feature-metric {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  gap: 6px;
+  transition: opacity 0.3s;
+}
+.yunhe-homepage .feature-metric > span {
+  font-size: 14px;
+  color: #64748b;
+}
+.yunhe-homepage .feature-metric strong {
+  font-size: 20px;
+  color: #1354ee;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.yunhe-homepage
+  .feature-card:hover
+  :is(p, li svg, .feature-metric > span, .feature-metric strong) {
+  color: #fff;
+}
+.yunhe-homepage .feature-card:hover .feature-divider {
+  background: #ffffff4d;
+}
+.yunhe-homepage .feature-card:hover .feature-metric {
+  opacity: 0;
+}
+.yunhe-homepage .feature-illustration {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  bottom: 14px;
+  right: 14px;
+}
+.yunhe-homepage .pricing-section {
+  padding: 128px 0;
+  background: var(--api-bg);
+}
+.yunhe-homepage .pricing-section .section-label {
+  margin-bottom: 32px;
+}
+.yunhe-homepage .pricing-section .section-heading h2 {
+  margin-bottom: 96px;
+}
+.yunhe-homepage .pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+.yunhe-homepage .pricing-card {
+  position: relative;
+  border: 1px solid #e1e3e6;
+  padding: 52px 8px 48px 68px;
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  background: var(--api-bg);
+  transition: all 0.5s;
+}
+.yunhe-homepage .pricing-card:hover {
+  background: #333;
+  color: #fff;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px #0000000f;
+}
+.yunhe-homepage .recommended {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #2563eb;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+}
+.yunhe-homepage .plan-title {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.yunhe-homepage .plan-title > svg,
+.yunhe-homepage .plan-title > img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  color: #1354ee;
+}
+.yunhe-homepage .plan-title h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+.yunhe-homepage .plan-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin: 24px 0;
+}
+.yunhe-homepage .plan-price > span {
+  font-size: 36px;
+}
+.yunhe-homepage .plan-price > strong {
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -1.6px;
+}
+.yunhe-homepage .plan-price .contact-sales {
+  font-size: 40px;
+}
+.yunhe-homepage .pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+.yunhe-homepage .pricing-card li {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 16px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+.yunhe-homepage .pricing-card li svg {
+  width: 16px;
+  height: 16px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.yunhe-homepage .pricing-card:hover li svg {
+  opacity: 1;
+}
+.yunhe-homepage .pricing-card > .action-link,
+.yunhe-homepage .contact-trigger {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 0;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: none;
+  transform: none;
+}
+.yunhe-homepage .pricing-card .action-link svg {
+  width: 16px;
+  height: 16px;
+}
+.yunhe-homepage .pricing-card-1 > .action-link {
+  background: #5a41e9;
+}
+.yunhe-homepage .pricing-card-2 .action-link {
+  background: #05d1ef;
+}
+.yunhe-homepage .site-footer {
+  padding: 96px 0 48px;
+  background: var(--api-bg);
+}
+.yunhe-homepage .trust-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 349px;
+  background: url('../../public/homepage/images/footer_bg.webp') center/cover
+    no-repeat;
+  padding: 0 32px;
+}
+.yunhe-homepage .trust-glass {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+  align-items: center;
+  padding: 60px;
+  max-width: 1280px;
+  width: 100%;
+  margin: auto;
+  min-height: 228px;
+  border-radius: 24px;
+  color: #fff;
+  background: linear-gradient(90deg, #ffffff73, #ffffff5c 50%, #ffffff4d);
+  border: 1.5px solid #4f75ff99;
+  box-shadow:
+    inset 0 1px #ffffff59,
+    inset -2px -2px #4078ff59;
+  backdrop-filter: saturate(120%) blur(10px);
+}
+.yunhe-homepage .trust-glass h3 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+.yunhe-homepage .trust-glass p {
+  font-size: 14px;
+  font-weight: 400;
+}
+.yunhe-homepage .footer-content {
+  padding-top: 112px;
+}
+.yunhe-homepage .footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 40px;
+}
+.yunhe-homepage .footer-logo {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+  margin-bottom: 12px;
+}
+.yunhe-homepage .footer-brand {
+  padding-right: 32px;
+  font-size: 14px;
+}
+.yunhe-homepage .footer-brand > p {
+  color: var(--api-muted);
+  line-height: 1.625;
+  margin-bottom: 12px;
+}
+.yunhe-homepage .footer-brand > a:last-child {
+  color: #2563eb;
+  font-weight: 500;
+}
+.yunhe-homepage .footer-grid h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.yunhe-homepage .footer-grid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #64748b;
+  font-size: 14px;
+}
+.yunhe-homepage .footer-grid li a:hover {
+  color: #1354ee;
+}
+.yunhe-homepage .footer-bottom {
+  padding-top: 64px;
+  text-align: center;
+}
+.yunhe-homepage .footer-bottom p {
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.yunhe-homepage .footer-bottom em {
+  font-style: normal;
+  color: #3f6feb;
+}
+.yunhe-homepage .footer-bottom > small {
+  display: block;
+  margin-top: 32px;
+  color: #94a3b8;
+  font-size: 16px;
+}
+.yunhe-homepage .will-reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.yunhe-homepage .will-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.dark .yunhe-homepage .hero {
+  background-color: #0f172a;
+}
+.dark .yunhe-homepage .model-tab:not(.selected) .model-description {
+  color: #ffffff66;
+}
+.dark .yunhe-homepage :is(.model-brand, .model-versions > span) {
+  background: #1e293b;
+}
+.dark .yunhe-homepage .model-glass {
+  background: #1e293b4d;
+  border-color: #ffffff1a;
+}
+.dark .yunhe-homepage .section-label,
+.dark .yunhe-homepage .feature-card,
+.dark .yunhe-homepage .pricing-card {
+  border-color: #ffffff1a;
+}
+.dark .yunhe-homepage .features-section {
+  background: #0f172a;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .yunhe-homepage .scene-canvas {
+    transform: scale(0.75);
+  }
+}
+@media (max-width: 1023px) {
+  .yunhe-homepage .page-container {
+    padding-inline: 24px;
+  }
+  .yunhe-homepage .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .yunhe-homepage .hero-copy {
+    margin: auto;
+    align-items: center;
+    text-align: center;
+  }
+  .yunhe-homepage .hero-action {
+    margin-top: 32px;
+  }
+  .yunhe-homepage .hero-visual {
+    height: 450px;
+    justify-content: center;
+    margin-top: 32px;
+  }
+  .yunhe-homepage .scene-frame {
+    max-width: 400px;
+    transform: scale(0.9);
+  }
+  .yunhe-homepage .scene-canvas {
+    transform: scale(0.7);
+  }
+  .yunhe-homepage .models-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .yunhe-homepage .model-tabs {
+    grid-column: auto;
+  }
+  .yunhe-homepage .desktop-model-panel {
+    display: none;
+  }
+  .yunhe-homepage .mobile-model-panel {
+    display: block;
+    margin-top: 24px;
+  }
+  .yunhe-homepage .model-tab {
+    padding-block: 24px;
+  }
+  .yunhe-homepage .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .yunhe-homepage .pricing-card {
+    padding-left: 24px;
+    padding-right: 16px;
+  }
+  .yunhe-homepage .footer-bottom p {
+    font-size: 64px;
+    white-space: normal;
+  }
+}
+@media (max-width: 767px) {
+  .yunhe-homepage .feature-grid {
+    grid-template-columns: 1fr;
+  }
+  .yunhe-homepage .page-container {
+    padding-inline: 16px;
+  }
+  .yunhe-homepage .hero {
+    padding: 96px 0 48px;
+    min-height: calc(100vh - 64px);
+  }
+  .yunhe-homepage .hero-badge {
+    height: 32px;
+    font-size: 12px;
+    padding: 0 16px;
+    margin-bottom: 24px;
+  }
+  .yunhe-homepage .hero h1 {
+    font-size: 36px;
+    margin-bottom: 24px;
+  }
+  .yunhe-homepage .hero-headline {
+    white-space: normal;
+  }
+  .yunhe-homepage .hero-promise > span:first-child {
+    white-space: normal;
+  }
+  .yunhe-homepage .hero-promise {
+    display: inline;
+    margin-top: 0;
+  }
+  .yunhe-homepage .ready-text {
+    display: inline;
+    margin-top: 0;
+  }
+  .yunhe-homepage .hero-stats {
+    gap: 64px;
+    margin-top: 16px;
+  }
+  .yunhe-homepage .hero-stats strong {
+    font-size: 36px;
+  }
+  .yunhe-homepage .hero-stats p {
+    font-size: 14px;
+    margin-top: 16px;
+  }
+  .yunhe-homepage .hero-visual {
+    height: 400px;
+  }
+  .yunhe-homepage .scene-frame {
+    max-width: 320px;
+    transform: none;
+  }
+  .yunhe-homepage .scene-canvas {
+    transform: scale(0.65);
+  }
+  .yunhe-homepage .section-label {
+    margin-bottom: 24px;
+  }
+  .yunhe-homepage .section-heading h2 {
+    font-size: 32px;
+    line-height: 1.25;
+    letter-spacing: -0.8px;
+    margin-bottom: 24px;
+  }
+  .yunhe-homepage .model-tab {
+    padding: 20px 24px;
+  }
+  .yunhe-homepage .model-description {
+    font-size: 20px;
+  }
+  .yunhe-homepage .model-panel {
+    padding: 32px;
+    min-height: 0;
+  }
+  .yunhe-homepage .model-glass {
+    padding: 16px;
+  }
+  .yunhe-homepage .model-columns {
+    gap: 8px;
+  }
+  .yunhe-homepage .model-brand {
+    width: 80px;
+    height: 80px;
+    gap: 4px;
+    margin-bottom: 16px;
+  }
+  .yunhe-homepage .model-brand img,
+  .yunhe-homepage .model-brand > svg {
+    width: 32px;
+    height: 32px;
+  }
+  .yunhe-homepage .model-brand strong {
+    font-size: 14.4px;
+  }
+  .yunhe-homepage .model-versions {
+    gap: 8px;
+  }
+  .yunhe-homepage .model-versions > span {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+  .yunhe-homepage .feature-card {
+    padding-inline: 24px;
+  }
+  .yunhe-homepage .feature-card h3 {
+    font-size: 24px;
+  }
+  .yunhe-homepage .feature-divider {
+    margin-inline: -24px;
+  }
+  .yunhe-homepage .pricing-section {
+    padding: 80px 0;
+  }
+  .yunhe-homepage .pricing-section .section-heading h2 {
+    margin-bottom: 40px;
+  }
+  .yunhe-homepage .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .yunhe-homepage .plan-title {
+    width: 100%;
+  }
+  .yunhe-homepage .pricing-card {
+    min-height: 560px;
+  }
+  .yunhe-homepage .site-footer {
+    padding: 64px 0 32px;
+  }
+  .yunhe-homepage .trust-banner {
+    padding: 48px 8px;
+  }
+  .yunhe-homepage .trust-glass {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 32px;
+  }
+  .yunhe-homepage .footer-content {
+    padding-top: 48px;
+  }
+  .yunhe-homepage .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+  }
+  .yunhe-homepage .footer-brand {
+    grid-column: span 2;
+  }
+  .yunhe-homepage .footer-bottom {
+    padding-top: 48px;
+  }
+  .yunhe-homepage .footer-bottom p {
+    font-size: 36px;
+  }
+  .yunhe-homepage .footer-bottom > small {
+    font-size: 14px;
+  }
+}
+@media (max-width: 639px) {
+  .yunhe-homepage:not([data-language^='zh']) .hero h1 {
+    font-size: 36px;
+  }
+  .yunhe-homepage .hero-stats {
+    width: 100%;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  .yunhe-homepage .hero-stats strong {
+    font-size: 24px;
+  }
+  .yunhe-homepage .hero-stats p {
+    font-size: 12px;
+  }
+  .yunhe-homepage .hero-action {
+    width: auto;
+  }
+  .yunhe-homepage .hero-action .action-link {
+    justify-content: center;
+    gap: 0;
+  }
+  .yunhe-homepage .hero-visual {
+    height: 320px;
+  }
+  .yunhe-homepage .scene-frame {
+    max-width: 288px;
+  }
+  .yunhe-homepage .scene-canvas {
+    transform: scale(0.55);
+  }
+  .yunhe-homepage .feature-grid {
+    grid-template-columns: 1fr;
+  }
+  .yunhe-homepage .model-brand {
+    width: 64px;
+    height: 64px;
+  }
+  .yunhe-homepage .model-brand strong {
+    font-size: 11.2px;
+  }
+  .yunhe-homepage .model-versions > span {
+    font-size: 9.6px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .yunhe-homepage .will-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .yunhe-homepage * {
+    scroll-behavior: auto;
+  }
+}
+
+.yunhe-homepage {
+  overflow-x: clip;
+}
+.yunhe-homepage > div {
+  background: var(--api-bg);
+  color: var(--api-text);
+}
+.yunhe-homepage h1,
+.yunhe-homepage h2,
+.yunhe-homepage h3,
+.yunhe-homepage h4 {
+  font-family: inherit;
+}
+.yunhe-homepage .action-link {
+  color: #fff;
+}
+.yunhe-homepage .feature-card {
+  min-height: 280px;
+}
+.yunhe-homepage .feature-metric {
+  flex-wrap: wrap;
+}
+.yunhe-homepage .feature-metric strong {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.yunhe-homepage .feature-grid > div {
+  height: 100%;
+}
+.yunhe-homepage .model-availability {
+  color: var(--api-muted);
+  margin: -24px 0 32px;
+  font-size: 14px;
+}
+.yunhe-homepage .footer-logo {
+  flex-wrap: wrap;
+}
+.yunhe-homepage .footer-logo img {
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.yunhe-homepage .footer-bottom p {
+  font-size: clamp(32px, 6.5vw, 96px);
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.yunhe-homepage .footer-bottom > small {
+  margin-top: 20px;
+}
+.yunhe-homepage .plan-price .contact-sales {
+  font-size: clamp(24px, 3vw, 40px);
+  overflow-wrap: anywhere;
+}
+.yunhe-homepage .plan-title h3 {
+  text-align: center;
+}
+.dark .yunhe-homepage .feature-copy,
+.dark .yunhe-homepage .feature-metric > span {
+  color: #cbd5e1;
+}
+.dark .yunhe-homepage .model-versions > span {
+  color: #93c5fd;
+}
+@media (min-width: 768px) {
+  .yunhe-homepage .pricing-grid[data-columns='2'] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.yunhe-homepage .feature-card:hover .feature-copy {
+  color: white;
+}
+.yunhe-homepage .feature-card:focus-within {
+  outline: 2px solid #1354ee;
+}
+@media (hover: none) {
+  .yunhe-homepage .feature-copy > ul {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .yunhe-homepage .hero-copy {
+    min-width: 0;
+  }
+  .yunhe-homepage .hero h1 {
+    overflow-wrap: anywhere;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .yunhe-homepage .hero h1 {
+    font-size: 6vw;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .yunhe-homepage *,
+  .yunhe-homepage *::before,
+  .yunhe-homepage *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
